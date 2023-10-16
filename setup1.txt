@@ -3,11 +3,12 @@
 #Install wget
 
 sudo apt-get install wget
-Install miniconda
+
+#Install miniconda
 
 wget -c https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
-Then run
+#Then run....
 
 bash ./Miniconda3-latest-Linux-x86_64.sh
 
@@ -31,10 +32,27 @@ source activate qiime2-amplicon-2023.9
 
 qiime --help
 
+#Download the Sequencing files and change directory
 
-#Download the manifest.sh
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1uVUzXlBUdnLqmJEXW6JaQJmXlKC7OAW0' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1uVUzXlBUdnLqmJEXW6JaQJmXlKC7OAW0" -O alios.zip && rm -rf /tmp/cookies.txt
+unzip alios.zip
+cd ~/content/alios/
+
+#Download the qiime2 scripts
+
+wget https://github.com/toryn13/qiime2demo/raw/main/qiime2.zip
+
+#Unzip and move to the alios directory 
+unzip qiime2
+cp ~/qiime2_scripts/*.sh ~/content/alios/
+
+
+#Download the manifest.sh script
 
 wget https://raw.githubusercontent.com/toryn13/qiime2demo/main/manifest.sh
+
+#to run this file 
+bash manifest.sh
 
 #Download a taxonomy classifer
 wget \
@@ -50,7 +68,9 @@ qiime empress --help
 
 
 #To run a script
+chmod 777 qiime2_quality.sh
+nohup ~/content.alios/qiime2_quality.sh
 
-nohup <file.sh>
+
 
 
