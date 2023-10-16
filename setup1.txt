@@ -3,6 +3,7 @@
 #Install wget
 
 sudo apt-get install wget
+sudo apt-get install unzip
 
 #Install miniconda
 
