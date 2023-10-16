@@ -1,0 +1,56 @@
+#To set up your google cloud virtal machine
+
+#Install wget
+
+sudo apt-get install wget
+Install miniconda
+
+wget -c https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+Then run
+
+bash ./Miniconda3-latest-Linux-x86_64.sh
+
+#Accept terms ”yes”, accept current disk location press ”enter”, For “Do you wish the installer to initialize Miniconda3 by running conda init? Select yes/Y.
+
+#Close the VM and restart
+
+#Download the QIIME2 *.yml
+
+wget https://data.qiime2.org/distro/amplicon/qiime2-amplicon-2023.9-py38-linux-conda.yml
+
+#Create the environment
+
+conda env create -n qiime2-amplicon-2023.9 --file qiime2-amplicon-2023.9-py38-linux-conda.yml
+
+#Activate the environment
+
+source activate qiime2-amplicon-2023.9
+
+#Test the installation
+
+qiime --help
+
+
+#Download the manifest.sh
+
+wget https://raw.githubusercontent.com/toryn13/qiime2demo/main/manifest.sh
+
+#Download a taxonomy classifer
+wget \
+  -O "gg-13-8-99-nb-classifier.qza" \
+  "https://data.qiime2.org/2023.9/common/gg-13-8-99-nb-classifier.qza"
+
+#install empress to visualise the tree
+
+pip install empress
+
+qiime dev refresh-cache
+qiime empress --help
+
+
+#To run a script
+
+nohup <file.sh>
+
+
