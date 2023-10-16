@@ -19,7 +19,7 @@ for f in *.raw_1.fq.gz; do
     reverse_seq="${sample_name}.raw_2.fq.gz"
 
     # Append the entry to the manifest file
-    echo -e "$sample_name\t$forward-absolute-filepath\t$forward-absolute-filepath" >> "$output_manifest"
+    echo -e "$sample_name\t$forward_seq\t$reverse_seq" >> "$output_manifest"
 done
 
 # Inform the user that the manifest file has been created
