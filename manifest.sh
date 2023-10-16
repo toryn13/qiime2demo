@@ -10,7 +10,7 @@ echo -e "SampleID\tForwardSequence\tReverseSequence" > "$output_manifest"
 
 
 # Loop through all FASTQ.gz files and construct the manifest entries
-for f in *fq.gz; do
+for f in *.raw_1.fq.gz; do
     # Extract the sample name from the file name
     sample_name=$(echo "$f" | cut -d '.' -f 1)
 
