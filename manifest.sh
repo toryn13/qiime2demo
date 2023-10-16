@@ -6,7 +6,7 @@
 output_manifest="manifest.tsv"
 
 # Start writing the header to the manifest file
-echo -e "SampleID\tForwardSequence\tReverseSequence" > "$output_manifest"
+echo -e "SampleID\tforward-absolute-filepath\treverse-absolute-filepath" > "$output_manifest"
 
 
 # Loop through all FASTQ.gz files and construct the manifest entries
@@ -19,7 +19,7 @@ for f in *.raw_1.fq.gz; do
     reverse_seq="${sample_name}.raw_2.fq.gz"
 
     # Append the entry to the manifest file
-    echo -e "$sample_name\t$forward_seq\t$reverse_seq" >> "$output_manifest"
+    echo -e "$sample_name\t$forward-absolute-filepath\t$forward-absolute-filepath" >> "$output_manifest"
 done
 
 # Inform the user that the manifest file has been created
