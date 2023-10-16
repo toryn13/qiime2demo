@@ -69,7 +69,7 @@ qiime empress --help
 
 #To run a script
 chmod 777 qiime2_quality.sh
-nohup ~/content.alios/qiime2_quality.sh
+nohup ~/content/alios/qiime2_quality.sh
 
 
 
