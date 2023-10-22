@@ -68,9 +68,9 @@ qiime dev refresh-cache
 qiime empress --help
 
 
-#To run a script
-chmod 777 qiime2_quality.sh
-nohup ~/content/alios/qiime2_quality.sh
+#To run a script, make sure the file is there!!
+chmod 777 qiime2_quality2.sh
+nohup ~/content/alios/qiime2_quality2.sh
 
 
 
