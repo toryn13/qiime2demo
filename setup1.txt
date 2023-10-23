@@ -70,11 +70,17 @@ qiime empress --help
 
 #To run a script, make sure the file is there!!
 chmod 777 qiime2_quality2.sh
+
 nohup ~/content/alios/qiime2_quality2.sh
 
 #updated qiime2 scripts
 
-wget "https://raw.githubusercontent.com/toryn13/qiime2demo/main/qiime2_denoise3_1.sh"
+wget "https://raw.githubusercontent.com/toryn13/qiime2demo/main/qiime2_quality2.1.sh"
+wget "https://raw.githubusercontent.com/toryn13/qiime2demo/main/qiime2_denoise3.1.sh"
+wget "https://raw.githubusercontent.com/toryn13/qiime2demo/main/qiime2_tax_tree5.1.sh"
+wget "https://raw.githubusercontent.com/toryn13/qiime2demo/main/qiime2_alpha_rare4.1.sh"
+wget "https://raw.githubusercontent.com/toryn13/qiime2demo/main/qiime2_diversity6.1.sh"
+
 
 #metadata file
 wget "https://raw.githubusercontent.com/toryn13/qiime2demo/main/metadata.txt"
