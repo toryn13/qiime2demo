@@ -86,5 +86,12 @@ wget "https://raw.githubusercontent.com/toryn13/qiime2demo/main/qiime2_diversity
 wget "https://raw.githubusercontent.com/toryn13/qiime2demo/main/metadata.txt"
 
 
+#Make a google bucket
+#follow the instructions
+gcloud auth login
+
+gsutil cp ~/content/alios/*.qza gs://bucketname/
+
+
 
 
