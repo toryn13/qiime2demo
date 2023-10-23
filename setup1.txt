@@ -73,5 +73,9 @@ chmod 777 qiime2_quality2.sh
 nohup ~/content/alios/qiime2_quality2.sh
 
 
+#metadata file
+wget "https://raw.githubusercontent.com/toryn13/qiime2demo/main/metadata.txt"
+
+
 
 
