@@ -18,25 +18,18 @@ def unzip_qza_files(qza_file_paths):
             output_folder = os.path.join(os.getcwd(), folder_name)
             os.makedirs(output_folder, exist_ok=True)
 
-            # Iterate through the extracted directories
+            # Iterate through the extracted directories and copy all suitable files
             for root, dirs, files in os.walk(temp_dir):
-                # Find the first unnamed text file (CSV, TSV, or TXT)
-                target_file = None
                 for file_name in files:
                     if file_name.lower().endswith(('.csv', '.tsv', '.txt', 'biom', 'nwk')) and not file_name.startswith('.'):
-                        target_file = os.path.join(root, file_name)
-                        break
-
-                # Check if a suitable file was found
-                if target_file:
-                    # Perform the copy operation (copy to the created folder)
-                    shutil.copy(target_file, output_folder)
-                    break  # Stop searching once a file is found
+                        source_file = os.path.join(root, file_name)
+                        destination_file = os.path.join(output_folder, file_name)
+                        shutil.copy(source_file, destination_file)
 
             # Clean up the temporary directory and its contents
             shutil.rmtree(temp_dir)
 
-            print(f"Unzipped and copied file: {os.path.basename(qza_file_path)} into folder: {folder_name}")
+            print(f"Unzipped and copied files from {os.path.basename(qza_file_path)} into folder: {folder_name}")
         except Exception as e:
             print(f"An error occurred while processing {qza_file_path}: {e}")
 
